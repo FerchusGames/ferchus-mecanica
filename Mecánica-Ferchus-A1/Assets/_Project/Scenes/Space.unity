@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.024967156, g: 0.022754043, b: 0.070475414, a: 1}
+  m_IndirectSpecularColor: {r: 0.02495846, g: 0.02274444, b: 0.07047759, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -315,7 +315,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _physicsPropertiesSO: {fileID: 11400000, guid: 05d3b407302572d4582ae589ac566f06, type: 2}
-  _canMove: 1
+  _canMove: 0
+  _forceVectorList: []
 --- !u!1 &1463334354
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,3 +508,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _physicsPropertiesSO: {fileID: 11400000, guid: 05d3b407302572d4582ae589ac566f06, type: 2}
   _canMove: 1
+  _forceVectorList:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}

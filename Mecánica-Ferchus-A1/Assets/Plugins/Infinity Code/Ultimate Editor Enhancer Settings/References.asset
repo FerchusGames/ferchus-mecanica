@@ -187,11 +187,3 @@ MonoBehaviour:
   _sceneHistory:
   - name: Space
     path: Assets/_Project/Scenes/Space.unity
-  - name: Test
-    path: Assets/EarthRendering Free/Test.unity
-  - name: DOTweenPath
-    path: Assets/Plugins/Demigiant/DOTweenPro Examples/DOTweenPath.unity
-  - name: DOTweenAnimation_Advanced
-    path: Assets/Plugins/Demigiant/DOTweenPro Examples/DOTweenAnimation_Advanced.unity
-  - name: DOTweenAnimation_Basics
-    path: Assets/Plugins/Demigiant/DOTweenPro Examples/DOTweenAnimation_Basics.unity

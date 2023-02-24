@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c52ea22d07450544993dbc5bf257887e, type: 3}
   m_Name: PhysicsPropertiesSO
   m_EditorClassIdentifier: 
-  <Velocity>k__BackingField: {x: 0, y: 0, z: 0}
+  <Velocity>k__BackingField: {x: 1, y: 1, z: 0}
   <Torque>k__BackingField: {x: 0, y: 10, z: 0}
