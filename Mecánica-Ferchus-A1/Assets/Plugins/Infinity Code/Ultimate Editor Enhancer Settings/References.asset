@@ -187,5 +187,3 @@ MonoBehaviour:
   _sceneHistory:
   - name: Leyes de Newton
     path: Assets/_Project/Scenes/Leyes de Newton.unity
-  - name: Space
-    path: Assets/_Project/Scenes/Space.unity
