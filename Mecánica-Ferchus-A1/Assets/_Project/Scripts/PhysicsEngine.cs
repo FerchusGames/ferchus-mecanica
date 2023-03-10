@@ -1,15 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 public class PhysicsEngine : MonoBehaviour
 {
+    const float GRAVITATIONAL_CONSTANT = .0000000000667f;
+
     [field:SerializeField] public Vector3 Velocity { get; private set; }
 
     [SerializeField] private float _objectMass;
     [SerializeField] private float _totalMass;
     [SerializeField] private bool _renderNetForce;
+
+    private List<PhysicsEngine> _physicsEngineList;
+
+    private PhysicsEngine _physicsEngine;
 
     private List<Vector3> _forceVectorList;
     private LineRenderer _lineRenderer;
@@ -17,6 +25,8 @@ public class PhysicsEngine : MonoBehaviour
 
     private void Start()
     {
+        _physicsEngineList = FindObjectsOfType<PhysicsEngine>().ToList();
+
         _totalMass = _objectMass;
         _forceVectorList = new List<Vector3>();
         _lineRenderer = GetComponent<LineRenderer>();
@@ -24,9 +34,29 @@ public class PhysicsEngine : MonoBehaviour
 
     private void FixedUpdate()
     {
+        AddGravitationForce();
+
         RenderVector();
         Accelerate();
+
         ResetForces();
+    }
+
+    private void AddGravitationForce()
+    {
+        for (int i = 0; i < _physicsEngineList.Count; i++) 
+        {
+            float distance = Vector3.Distance(_physicsEngineList[i].transform.position, transform.position);
+
+            if (distance != 0)
+            {
+                float magnitude = GRAVITATIONAL_CONSTANT * ((_totalMass * _physicsEngineList[i]._totalMass) / Mathf.Pow(distance, 2));
+                Vector3 direction = (_physicsEngineList[i].transform.position - transform.position).normalized;
+                Vector3 force = magnitude * direction;
+
+                AddForce(force);
+            }
+        }
     }
 
     public void AddForce(Vector3 force)
