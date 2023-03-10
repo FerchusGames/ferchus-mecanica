@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 517753866}
   - component: {fileID: 517753869}
   - component: {fileID: 517753870}
+  - component: {fileID: 517753871}
   m_Layer: 0
   m_Name: 8 Ball
   m_TagString: Untagged
@@ -221,7 +222,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Velocity>k__BackingField: {x: 0, y: 0, z: 0}
-  _mass: 1
+  _objectMass: 100000
+  _totalMass: 0
   _renderNetForce: 0
 --- !u!120 &517753870
 LineRenderer:
@@ -322,6 +324,22 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &517753871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517753862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4fecd54ff58f5944a6446cd95f20bd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _propulsionUnitVector: {x: 0, y: 1, z: 0}
+  _propulsionPercentage: 1
+  _maxPropulsion: 10
+  _fuelMass: 50
 --- !u!1 &574971441
 GameObject:
   m_ObjectHideFlags: 0

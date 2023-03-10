@@ -86,39 +86,9 @@ public class PhysicsEngine : MonoBehaviour
         }
     }
 
-    #region
-
-    private Vector3 AddForces(List<Vector3> forceVectorList)
+    public void AddToTotalMass(float mass)
     {
-        Vector3 result = Vector3.zero;
-
-        if(forceVectorList != null)
-        {
-            foreach (Vector3 force in forceVectorList)
-            {
-                result += force;
-            }
-        }
-
-        return result;
+        _totalMass += mass;
     }
-
-    private void GetForces()
-    {
-        List<Vector3> forceVectorList = new List<Vector3>();
-
-        AddForce[] addForceList = GetComponents<AddForce>();
-
-        if(addForceList != null)
-        {
-            foreach (AddForce addForce in addForceList)
-            {
-                forceVectorList.Add(addForce.Force);
-            }
-        }
-
-        _forceVectorList = forceVectorList;
-    }
-
-    #endregion
 }
+
