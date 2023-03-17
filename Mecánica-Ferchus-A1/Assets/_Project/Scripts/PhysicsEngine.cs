@@ -23,7 +23,7 @@ public class PhysicsEngine : MonoBehaviour
     private LineRenderer _lineRenderer;
     private Vector3 _netForce;
 
-    private void Start()
+    private void Awake()
     {
         _physicsEngineList = FindObjectsOfType<PhysicsEngine>().ToList();
 
@@ -46,7 +46,7 @@ public class PhysicsEngine : MonoBehaviour
     {
         for (int i = 0; i < _physicsEngineList.Count; i++) 
         {
-            float distance = Vector3.Distance(_physicsEngineList[i].transform.position, transform.position);
+            float distance = Vector3.Distance(_physicsEngineList[i].transform.position, transform.position) * 1000;
 
             if (distance != 0)
             {
@@ -61,6 +61,7 @@ public class PhysicsEngine : MonoBehaviour
 
     public void AddForce(Vector3 force)
     {
+        //Debug.Log("Added a force of: " + force);
         _forceVectorList.Add(force);
         _netForce += force;
     }
@@ -81,7 +82,7 @@ public class PhysicsEngine : MonoBehaviour
 
         transform.Translate(Velocity * Time.fixedDeltaTime);
 
-        Debug.Log("Acceleration: " + acceleration);
+        //Debug.Log("Acceleration: " + acceleration);
     }
 
     public void UpdateTotalMass(float addedMass)
@@ -91,28 +92,31 @@ public class PhysicsEngine : MonoBehaviour
 
     private void RenderVector()
     {
-        _lineRenderer.enabled = _renderNetForce;
-
-        if(_renderNetForce && _forceVectorList != null)
+        if (_lineRenderer != null)
         {
-            int verticesCount = _forceVectorList.Count * 2;
+            _lineRenderer.enabled = _renderNetForce;
 
-            _lineRenderer.positionCount = verticesCount;
-
-            _lineRenderer.startWidth = 0.1f;
-            _lineRenderer.endWidth = 0.1f;
-            _lineRenderer.startColor = Color.cyan;
-            _lineRenderer.endColor = Color.cyan;
-
-            Vector3[] verticesPositons = new Vector3[verticesCount]; 
-
-            for (int i = 0; i < verticesCount; i = i + 2)
+            if(_renderNetForce && _forceVectorList != null)
             {
-                verticesPositons[i] = transform.position;
-                verticesPositons[i + 1] = transform.position - _forceVectorList[i / 2];
-            }
+                int verticesCount = _forceVectorList.Count * 2;
 
-            _lineRenderer.SetPositions(verticesPositons);
+                _lineRenderer.positionCount = verticesCount;
+
+                _lineRenderer.startWidth = 0.1f;
+                _lineRenderer.endWidth = 0.1f;
+                _lineRenderer.startColor = Color.cyan;
+                _lineRenderer.endColor = Color.cyan;
+
+                Vector3[] verticesPositons = new Vector3[verticesCount]; 
+
+                for (int i = 0; i < verticesCount; i = i + 2)
+                {
+                    verticesPositons[i] = transform.position;
+                    verticesPositons[i + 1] = transform.position - _forceVectorList[i / 2];
+                }
+
+                _lineRenderer.SetPositions(verticesPositons);
+            }
         }
     }
 
