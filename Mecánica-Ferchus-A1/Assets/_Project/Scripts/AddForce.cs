@@ -1,18 +1,21 @@
 using UnityEngine;
 
-public class AddForce : MonoBehaviour
+namespace _Project.Scripts
 {
-    [field: SerializeField] public Vector3 Force { get; private set; }
-
-    private PhysicsEngine _physicsEngine;
-
-    private void Start()
+    public class AddForce : MonoBehaviour
     {
-        _physicsEngine = GetComponent<PhysicsEngine>();
-    }
+        [field: SerializeField] public Vector3 Force { get; private set; }
 
-    private void FixedUpdate()
-    {
-        _physicsEngine.AddForce(Force);
+        private PhysicsEngine _physicsEngine;
+
+        private void Start()
+        {
+            _physicsEngine = GetComponent<PhysicsEngine>();
+        }
+
+        private void FixedUpdate()
+        {
+            _physicsEngine.AddForce(Force);
+        }
     }
 }

@@ -1,17 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowObject : MonoBehaviour
+namespace _Project.Scripts
 {
-    [SerializeField] private PhysicsEngine _objectToFollow;
-    [SerializeField] private bool _isFollowing;
-
-    void FixedUpdate()
+    public class FollowObject : MonoBehaviour
     {
-        if(_isFollowing)
+        [SerializeField] private PhysicsEngine objectToFollow;
+        [SerializeField] private bool isFollowing;
+
+        void FixedUpdate()
         {
-            transform.Translate(_objectToFollow.Velocity * Time.fixedDeltaTime);
+            if(isFollowing)
+            {
+                transform.Translate(objectToFollow.Velocity * Time.fixedDeltaTime);
+            }
         }
     }
 }

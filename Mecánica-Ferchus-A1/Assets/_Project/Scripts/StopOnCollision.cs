@@ -1,12 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class StopOnCollision : MonoBehaviour
+namespace _Project.Scripts
 {
-    private void OnCollisionEnter(Collision collision)
+    public class StopOnCollision : MonoBehaviour
     {
-        Debug.Log("Collided");
-        GetComponent<PhysicsEngine>().enabled = false;
+        private void OnCollisionEnter()
+        {
+            Debug.Log("Collided");
+            GetComponent<PhysicsEngine>().enabled = false;
+        }
     }
 }
