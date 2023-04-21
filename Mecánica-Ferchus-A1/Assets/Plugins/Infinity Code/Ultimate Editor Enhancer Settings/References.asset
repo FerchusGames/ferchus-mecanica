@@ -185,15 +185,7 @@ MonoBehaviour:
     alignWindowToBar: 1
     windowMode: 0
   _sceneHistory:
-  - name: Rocket
-    path: Assets/_Project/Scenes/Rocket.unity
-  - name: "Gravitaci\xF3n"
-    path: "Assets/_Project/Scenes/Gravitaci\xF3n.unity"
-  - name: Space
-    path: Assets/_Project/Scenes/Space.unity
-  - name: Leyes de Newton
-    path: Assets/_Project/Scenes/Leyes de Newton.unity
   - name: Examen1
     path: "Assets/_Ex\xE1menes/Examen1.unity"
-  - name: Test
-    path: Assets/EarthRendering Free/Test.unity
+  - name: "Gravitaci\xF3n"
+    path: "Assets/_Project/Scenes/Gravitaci\xF3n.unity"
