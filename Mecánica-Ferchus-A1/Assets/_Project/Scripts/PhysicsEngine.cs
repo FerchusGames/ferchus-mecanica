@@ -17,12 +17,18 @@ namespace _Project.Scripts
         private List<Vector3> _forceVectorList;
         private LineRenderer _lineRenderer;
         private Vector3 _netForce;
+        private GravitationalForce _gravitationalForce;
     
         private void Awake()
         {
             TotalMass = objectMass;
             _forceVectorList = new List<Vector3>();
             _lineRenderer = GetComponent<LineRenderer>();
+            _gravitationalForce = FindObjectOfType<GravitationalForce>();
+            if (_gravitationalForce != null)
+            {
+                _gravitationalForce._physicsEngineList.Add(this);
+            }
         }
 
         private void FixedUpdate()

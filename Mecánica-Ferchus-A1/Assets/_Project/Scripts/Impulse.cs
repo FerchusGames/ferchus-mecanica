@@ -8,6 +8,11 @@ namespace _Project.Scripts
 
         private PhysicsEngine _physicsEngine;
 
+        public void SetForce(Vector3 force)
+        {
+            Force = force;
+        }
+        
         private void Start()
         {
             _physicsEngine = GetComponent<PhysicsEngine>();

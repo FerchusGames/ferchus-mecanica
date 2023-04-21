@@ -185,7 +185,5 @@ MonoBehaviour:
     alignWindowToBar: 1
     windowMode: 0
   _sceneHistory:
-  - name: Examen1
-    path: "Assets/_Ex\xE1menes/Examen1.unity"
-  - name: "Gravitaci\xF3n"
-    path: "Assets/_Project/Scenes/Gravitaci\xF3n.unity"
+  - name: Examen2
+    path: "Assets/_Ex\xE1menes/Examen2.unity"

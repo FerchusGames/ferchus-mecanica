@@ -10,12 +10,7 @@ namespace _Project.Scripts
 
         [SerializeField] private bool isInKilometers;
     
-        private List<PhysicsEngine> _physicsEngineList;
-
-        private void Awake()
-        {
-            _physicsEngineList = FindObjectsOfType<PhysicsEngine>().ToList();
-        }
+        public List<PhysicsEngine> _physicsEngineList;
 
         private void FixedUpdate()
         {
