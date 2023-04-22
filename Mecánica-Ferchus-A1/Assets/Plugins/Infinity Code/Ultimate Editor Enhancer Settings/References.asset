@@ -185,5 +185,7 @@ MonoBehaviour:
     alignWindowToBar: 1
     windowMode: 0
   _sceneHistory:
+  - name: Fluid Drag
+    path: Assets/_Project/Scenes/Fluid Drag.unity
   - name: Examen2
     path: "Assets/_Ex\xE1menes/Examen2.unity"
