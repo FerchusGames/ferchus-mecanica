@@ -6,7 +6,7 @@ namespace _Project.Scripts
 {
     public class GravitationalForce : MonoBehaviour
     {
-        const float GravitationalConstant = .0000000000667f;
+        private const float GravitationalConstant = .0000000000667f;
 
         [SerializeField] private bool isInKilometers;
     

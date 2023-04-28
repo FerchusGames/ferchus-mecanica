@@ -48,10 +48,7 @@ namespace _Project.Scripts
 
         private void ResetForces()
         {
-            if (_forceVectorList !=  null)
-            {
-                _forceVectorList.Clear();   
-            }
+            _forceVectorList?.Clear();
             _netForce = Vector3.zero;
         }
 
