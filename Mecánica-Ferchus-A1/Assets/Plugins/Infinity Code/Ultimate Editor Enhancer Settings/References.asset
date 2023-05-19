@@ -185,6 +185,12 @@ MonoBehaviour:
     alignWindowToBar: 1
     windowMode: 0
   _sceneHistory:
+  - name: Magnus
+    path: Assets/_Project/Scenes/Magnus.unity
+  - name: Torque
+    path: Assets/_Project/Scenes/Torque.unity
+  - name: Fluid Drag
+    path: Assets/_Project/Scenes/Fluid Drag.unity
   - name: Rotation
     path: Assets/_Project/Scenes/Rotation.unity
   - name: Examen2
