@@ -185,6 +185,8 @@ MonoBehaviour:
     alignWindowToBar: 1
     windowMode: 0
   _sceneHistory:
+  - name: Friction
+    path: Assets/_Project/Scenes/Friction.unity
   - name: Magnus
     path: Assets/_Project/Scenes/Magnus.unity
   - name: Torque
